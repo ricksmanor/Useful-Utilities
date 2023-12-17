@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Replace %20 with Space</title>
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+<body>
+
+  <h2>Enter Text:</h2>
+<input type="text" id="inputText" placeholder="Enter text with %20">
+<button onclick="per20_replaceSpaces()">Replace</button>
+
+<h2>Result:</h2>
+<p id="result"></p>
+
+<script>
+  function per20_replaceSpaces() {
+    // Get the input text
+    var per20_inputText = document.getElementById("inputText").value;
+
+    // Replace %20 with a space
+    var per20_resultText = per20_inputText.replace(/%20/g, ' ');
+
+    // Display the result
+    document.getElementById("result").innerText = per20_resultText;
+  }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"> 
+  <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/holiday.css@0.11.2" />-->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .tabs {
+      display: flex;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      border: 1px solid #ccc;
+    }
+
+    .tab:hover {
+      background-color: #dddddd6c;
+    }
+
+    .tab-content {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="tabs">
+  <div class="tab" onclick="openTab(1)">Tab 1</div>
+  <div class="tab" onclick="openTab(2)">Tab 2</div>
+  <div class="tab" onclick="openTab(3)">Tab 3</div>
+  <div class="tab" onclick="openTab(4)">Tab 4</div>
+</div>
+
+<div id="tabContent1" class="tab-content">
+  <h2>Content for Tab 1</h2>
+  <p>This is the content for Tab 1.</p>
+</div>
+
+<div id="tabContent2" class="tab-content">
+  <h2>Content for Tab 2</h2>
+  <p>This is the content for Tab 2.</p>
+</div>
+
+<div id="tabContent3" class="tab-content">
+  <h2>Content for Tab 3</h2>
+  <p>This is the content for Tab 3.</p>
+</div>
+
+<div id="tabContent4" class="tab-content">
+  <h2>Content for Tab 4</h2>
+  <p>This is the content for Tab 4.</p>
+</div>
+
+<script>
+  function openTab(tabNumber) {
+    // Hide all tab content
+    var tabContents = document.getElementsByClassName('tab-content');
+    for (var i = 0; i < tabContents.length; i++) {
+      tabContents[i].style.display = 'none';
+    }
+
+    // Show the selected tab content
+    var selectedTabContent = document.getElementById('tabContent' + tabNumber);
+    selectedTabContent.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

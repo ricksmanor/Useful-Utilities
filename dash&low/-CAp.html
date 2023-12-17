@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+  <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">-->
+  <title>Convert to Lowercase and Replace Spaces</title>
+  <script>
+    function convertText() {
+      // Get the input value
+      var inputValue = document.getElementById('textInput').value;
+  
+      // Get the options
+      var toLowerCase = document.getElementById('toLowerCase').checked;
+      var replaceSpaces = document.getElementById('replaceSpaces').checked;
+  
+      // Convert to lowercase if selected
+      if (toLowerCase) {
+        inputValue = inputValue.toLowerCase();
+      }
+  
+      // Replace spaces with hyphens if selected
+      if (replaceSpaces) {
+        inputValue = inputValue.replace(/\s+/g, '-');
+      }
+  
+      // Update the output element
+      document.getElementById('outputText').innerText = inputValue;
+    }
+  </script>
+  </head>
+  <body>
+  
+    <label for="textInput">Enter Text:</label>
+    <input type="text" id="textInput" oninput="convertText()" placeholder="Hyphenated & Lowercased">
+  
+    <p>Conversion Options:</p>
+    <label>
+      <input type="checkbox" id="toLowerCase" onclick="convertText()"> Lowercase
+    </label>
+    <label>
+      <input type="checkbox" id="replaceSpaces" onclick="convertText()"> Replace Spaces with Hyphens
+    </label>
+  
+    <p>Converted Text:</p>
+    <p id="outputText"></p>
+  </body>
+  
+
+</body>
+</html>
